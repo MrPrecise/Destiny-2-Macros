@@ -10,7 +10,12 @@ InputBox, Prism_inv, Current Prisms, Enter the exact prisms amount you want to s
 
 CoordMode, Mouse, Screen
 
-F3:: 
+F2::Reload
+F3::StartApplication()
+F4::ExitApp
+
+
+StartApplication()
 {
     Loop
     {
@@ -69,8 +74,7 @@ F3::
 
 
 
-F2::Reload
-F4::ExitApp
+
 
 ToInventory()
 {
@@ -113,8 +117,8 @@ CheckCurrency(unitNeeded, unitUsed, sampleText)
  
 If(unitNeeded < unitUsed){
 
-    MsgBox, 0,, You have %Glimmer_inv%  glimmer left`nYou have %Prism_inv% prisms left`nYou would need %unitNeeded% %sampleText% to continue
-    ExitApp
+    MsgBox, 0,, You have %Glimmer_inv%  glimmer left`nYou have %Prism_inv% prisms left`nYou would need %unitUsed% %sampleText% to continue
+    Reload
 }
 }
 
