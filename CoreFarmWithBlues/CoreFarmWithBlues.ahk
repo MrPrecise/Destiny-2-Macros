@@ -1,4 +1,4 @@
-﻿global 1s := 1000
+﻿global 1s := 1100
 
 /*
 Initialized inventory and cost
@@ -9,21 +9,18 @@ global price := [1000, 2500, 3000]
 global iteration := 0
 
 /*
-Initialized resolution arrays and switch
+Initialized resolution arrays and switch to your monitor size
+Supported sizes 1080p or 1440p
 */
-global 1080r := [[,],[,],[,],[,],[,],[,],[,]]
-global 2560r := [[1198, 525],[446, 1100], [2409, 765], [964, 1031],[534,556],[1858, 1021],[2003, 1016]] 
-global resolutionSwitch :=  {1: 1080r,  2: 2560r }
-global rSwitch
-global cRes
+global 1080r := [[900,393],[371,826],[1808, 574],[724,778],[392,388],[1397,763],[1499,767]]
+global 1440r := [[1198, 525],[446, 1100], [2409, 765], [964, 1031],[534,556],[1858, 1021],[2003, 1016]] 
+global resolutionSwitch :=  {1080: 1080r,  1440: 1440r }
+global cRes := resolutionSwitch[A_ScreenHeight]
 
+resolutionCheck(A_ScreenHeight)
 
 InputBox, Glimmer_inv, Current Glimmer, Enter the exact glimmer amount you want to spend
 InputBox, Prism_inv, Current Prisms, Enter the exact prisms amount you want to spend
-InputBox, rSwitch, What Resolution, Enter 1 for 1080p and 2 for 2560p resolution
-
-;Selecting the resolution
-cRes := resolutionSwitch[rSwitch]
 
 CoordMode, Mouse, Screen
 
@@ -112,9 +109,11 @@ HoldLMouseB(coordinates, delay){
 
 ; Function to click based on given coordinates 
 ClickMouse(coordinates){
+    
     x := coordinates[1]
     y := coordinates[2]
-    Click, x, y
+    MouseMove, x, y
+    Click
 }
 
 ; Function to hold the button F down to dismantle blues
@@ -143,4 +142,13 @@ If(unitNeeded < unitUsed){
 ; Functions to generate delays
 Delay(s){
     Sleep, s
+}
+
+; Quit the script if resolution is not met
+resolutionCheck(ScreenY){
+    if(ScreenY !== 1440 && ScreenY !== 1080){
+        MsgBox, 0,, Resolution not supported. Please change to 1080p or 1440p
+        ExitApp
+    }
+
 }
