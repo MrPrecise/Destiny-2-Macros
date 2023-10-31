@@ -14,7 +14,7 @@ Way this macro works is to spend 777 glimmer to collect 9 items from your collec
 This will loop will run until a given resource is exhausted. 
 
 ## Requirements
-[AutoHotkey](https://www.autohotkey.com/)
+[AutoHotkey](https://www.autohotkey.com/) Version 1
 
 ## Instructions
 * F2 = Reload the application, it will quit the current cycle 
