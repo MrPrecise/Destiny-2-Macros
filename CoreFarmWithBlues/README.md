@@ -4,7 +4,7 @@
 
 Empty your class items into the bank or other characters. This script is meant to be used with 9 items only. If you have not 9 class item slots free **there will be a loss in items. I am not responsible in the loss of items.**
 
-**Use any of of the the macros at own risk!**
+**Use macro at own risk!**
 
 ## Description
 Way this macro works is to spend 777 glimmer to collect 9 items from your collections, for a total of 6993 glimmer. Then the script will individually upgrade each item from 5 to 8.
