@@ -3,6 +3,7 @@
 ## Disclamer
 
 Empty your class items into the bank or other characters. This script is meant to be used with 9 items only. If you have not 9 class item slots free **there will be a loss in items. I am not responsible in the loss of items.**
+
 **Use any of of the the macros at own risk**
 
 ## Description
